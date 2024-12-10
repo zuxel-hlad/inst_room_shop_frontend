@@ -1,5 +1,11 @@
 <template>
-    <div class="container">Main page</div>
+    <main-container
+        >Main page
+        <main-button>ПЕРЕЙТИ К НОВОСТЯМ</main-button>
+    </main-container>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import mainContainer from '~/components/main-container/main-container.vue'
+import mainButton from '~/components/UI/main-button/main-button.vue'
+</script>

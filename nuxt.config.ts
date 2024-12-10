@@ -19,4 +19,7 @@ export default defineNuxtConfig({
             { name: 'Prosto One', provider: 'google', weights: [400] },
         ],
     },
+    imports: {
+        autoImport: false,
+    },
 })

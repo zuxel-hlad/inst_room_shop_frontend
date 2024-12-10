@@ -1,8 +1,81 @@
 .main-button {
+    position: relative;
     background-color: $orange;
     font-weight: 500;
-    padding: 15.5px 32px;
+    padding: 14.5px 32px;
     border-radius: $base-radius;
     color: $white;
     text-transform: uppercase;
+    transition:
+        background-color 0.2s,
+        border-color 0.2s,
+        color 0.2s;
+    border: 1px solid transparent;
+    overflow: hidden;
+
+    &__ripple {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 1;
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: scale(0);
+        animation: ripple-effect 0.7s ease-in-out;
+        transition: opacity 0.7s ease-in-out;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: $black;
+        }
+    }
+
+    &:active {
+        background-color: $black;
+    }
+
+    &:disabled {
+        background-color: $gray;
+        pointer-events: none;
+    }
+
+    &_black {
+        background-color: $black;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: $orange;
+            }
+        }
+
+        &:active {
+            background-color: $orange;
+        }
+    }
+
+    &_outlined {
+        background-color: transparent;
+        border-color: $gray;
+        color: $black;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: $orange;
+                color: $white;
+                border-color: $orange;
+            }
+        }
+
+        &:active {
+            background-color: $orange;
+            color: $white;
+            border-color: $orange;
+        }
+    }
+}
+
+@keyframes ripple-effect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
 }
