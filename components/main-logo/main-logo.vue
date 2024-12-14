@@ -12,4 +12,3 @@
 <script setup lang="ts">
 import './main-logo.scss'
 </script>
-<style lang="scss"></style>
