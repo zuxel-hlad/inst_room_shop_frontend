@@ -1,32 +1,33 @@
 .main-button {
     position: relative;
-    background-color: $orange;
-    font-weight: 500;
+
+    overflow: hidden;
+
     padding: 14.5px 32px;
-    border-radius: $base-radius;
+
+    font-weight: 500;
     color: $white;
     text-transform: uppercase;
+
+    background-color: $orange;
+    border: 1px solid transparent;
+    border-radius: $base-radius;
+
     transition:
         background-color 0.2s,
         border-color 0.2s,
         color 0.2s;
-    border: 1px solid transparent;
-    overflow: hidden;
 
     &__ripple {
         position: absolute;
-        border-radius: 50%;
-        opacity: 1;
-        background-color: rgba(255, 255, 255, 0.5);
         transform: scale(0);
-        animation: ripple-effect 0.7s ease-in-out;
-        transition: opacity 0.7s ease-in-out;
-    }
 
-    @media (hover: hover) {
-        &:hover {
-            background-color: $black;
-        }
+        opacity: 1;
+        background-color: rgb(255 255 255 / 50%);
+        border-radius: 50;
+
+        transition: opacity 0.7s ease-in-out;
+        animation: ripple-effect 0.7s ease-in-out;
     }
 
     &:active {
@@ -34,41 +35,47 @@
     }
 
     &:disabled {
-        background-color: $gray;
         pointer-events: none;
+        background-color: $gray;
     }
 
     &_black {
         background-color: $black;
 
+        &:active {
+            background-color: $orange;
+        }
+
         @media (hover: hover) {
             &:hover {
                 background-color: $orange;
             }
-        }
-
-        &:active {
-            background-color: $orange;
         }
     }
 
     &_outlined {
+        color: $black;
         background-color: transparent;
         border-color: $gray;
-        color: $black;
+
+        &:active {
+            color: $white;
+            background-color: $orange;
+            border-color: $orange;
+        }
 
         @media (hover: hover) {
             &:hover {
-                background-color: $orange;
                 color: $white;
+                background-color: $orange;
                 border-color: $orange;
             }
         }
+    }
 
-        &:active {
-            background-color: $orange;
-            color: $white;
-            border-color: $orange;
+    @media (hover: hover) {
+        &:hover {
+            background-color: $black;
         }
     }
 }

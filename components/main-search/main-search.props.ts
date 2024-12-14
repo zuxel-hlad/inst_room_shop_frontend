@@ -1,3 +1,3 @@
-import { type HTMLAttributes } from 'vue'
+import type { HTMLAttributes } from 'vue'
 
-export interface IMainSearch extends /* @vue-ignore */ HTMLAttributes{}
+export interface IMainSearch extends /* @vue-ignore */ HTMLAttributes {}

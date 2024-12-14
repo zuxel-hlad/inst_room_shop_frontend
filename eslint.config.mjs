@@ -1,18 +1,15 @@
-import tailwind from 'eslint-plugin-tailwindcss'
-
 // @ts-check
 import withNuxt from './.nuxt/eslint.config.mjs'
 export default withNuxt([
-    ...tailwind.configs['flat/recommended'],
     {
         rules: {
             'no-console': 'error',
-            'tailwindcss/classnames-order': 'warn',
             'import/no-default-export': 'off',
             'import/named': 'off',
             'import/no-cycle': 'off',
             'vue/no-multiple-template-root': 'off',
             'vue/no-v-html': 'off',
+            '@typescript-eslint/no-empty-object-type': 'off',
             '@typescript-eslint/no-unused-vars': [
                 'error',
                 {

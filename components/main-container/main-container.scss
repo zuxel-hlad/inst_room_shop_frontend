@@ -1,8 +1,8 @@
 .main-container {
     width: 100%;
     max-width: 1562px;
-    padding: 0 12px;
     margin: 0 auto;
+    padding: 0 12px;
 
     @media screen and (max-width: $xl) {
         max-width: calc($xl - 24px);

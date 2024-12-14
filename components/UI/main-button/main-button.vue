@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import './main-button.scss'
 
-import { type IMainButton } from './main-button.props'
+import type { IMainButton } from './main-button.props'
 
 defineProps<IMainButton>()
 
