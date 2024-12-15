@@ -14,9 +14,9 @@
     border-radius: $base-radius;
 
     transition:
-        background-color 0.2s,
-        border-color 0.2s,
-        color 0.2s;
+        background-color $base-transition,
+        border-color $base-transition,
+        color $base-transition;
 
     &__ripple {
         position: absolute;

@@ -1,4 +1,159 @@
 .main-header {
     color: $white;
     background-color: $coal;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+
+    &__work-time {
+        display: block;
+        margin-left: 10px;
+    }
+
+    &__callback {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 114px;
+
+        &-text {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        &-link {
+            position: relative;
+            color: $red;
+            transition: color $base-transition;
+
+            &::after {
+                content: '';
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                width: 100%;
+                height: 1px;
+
+                background-color: $red;
+            }
+
+            &:active {
+                color: $orange;
+                transition: $base-transition;
+
+                &::after {
+                    background-color: $orange;
+                }
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    color: $orange;
+
+                    &::after {
+                        background-color: $orange;
+                    }
+                }
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 1px;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        margin-left: 68px;
+
+        &-counter {
+            position: absolute;
+            top: 24px;
+            right: 22px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 22px;
+            min-height: 22px;
+            padding: 3px;
+
+            font-size: 11px;
+            color: $white;
+
+            background-color: $orange;
+            border-radius: 50%;
+
+            transition: background-color $base-transition;
+        }
+
+        &-btn {
+            position: relative;
+
+            overflow: hidden;
+
+            width: 96px;
+            height: 96px;
+
+            background-color: $dark-gray;
+
+            transition: background-color $base-transition;
+
+            &:active {
+                &:hover {
+                    color: $orange;
+                    background-color: $orange;
+
+                    &::after {
+                        background-color: $orange;
+                    }
+
+                    & .main-header__actions-counter {
+                        background-color: $dark-gray;
+                    }
+                }
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    color: $orange;
+                    background-color: $orange;
+
+                    &::after {
+                        background-color: $orange;
+                    }
+
+                    & .main-header__actions-counter {
+                        background-color: $dark-gray;
+                    }
+                }
+            }
+        }
+    }
+
+    &__results {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 16px;
+
+        & span:last-child {
+            font-weight: 700;
+        }
+    }
+
+    &__nav {
+        padding: 18px 0;
+        background-color: $black;
+    }
 }

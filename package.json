@@ -28,6 +28,7 @@
         "sass": "^1.81.1",
         "stylelint": "^16.11.0",
         "stylelint-config-clean-order": "^6.1.0",
-        "stylelint-config-standard-scss": "^14.0.0"
+        "stylelint-config-standard-scss": "^14.0.0",
+        "vite-svg-loader": "^5.1.0"
     }
 }
