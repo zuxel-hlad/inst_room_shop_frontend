@@ -49,15 +49,10 @@
                 <span>21.720&nbsp;грн</span>
             </div>
         </main-container>
-        <nav class="main-header__nav">
-            <main-container>
-                <main-search />
-            </main-container>
-        </nav>
+        <mainNavbar />
     </header>
 </template>
 <script setup lang="ts">
-import './main-header.scss'
 
 import type { IMainHeaderProps } from './main-header.props'
 
@@ -67,7 +62,9 @@ import accountIcon from '~/assets/svg/my_account.svg'
 import cartIcon from '~/assets/svg/shopping_cart.svg'
 import mainContainer from '~/components/main-container/main-container.vue'
 import mainLogo from '~/components/main-logo/main-logo.vue'
-import mainSearch from '~/components/main-search/main-search.vue'
+import mainNavbar from '~/components/main-navbar/main-navbar.vue'
+
+import './main-header.scss'
 
 defineProps<IMainHeaderProps>()
 </script>

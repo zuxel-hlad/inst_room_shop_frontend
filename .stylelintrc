@@ -1,8 +1,22 @@
 {
     "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order"],
-
+    "ignoreFiles": ["**/*.js", "**/*.mjs", "**/*.json"],
     "rules": {
         "unit-allowed-list": ["%", "deg", "px", "ms", "vh", "dvh", "s"],
+        "order/order": [
+            [
+                "custom-properties",
+                "declarations",
+                {
+                    "type": "at-rule",
+                    "name": "media"
+                },
+                {
+                    "type": "rule",
+                    "selector": "^&"
+                }
+            ]
+        ],
         "media-feature-range-notation": null,
         "selector-class-pattern": null,
         "selector-id-pattern": null

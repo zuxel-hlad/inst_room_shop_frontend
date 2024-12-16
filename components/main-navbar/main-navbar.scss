@@ -1,0 +1,52 @@
+.main-navbar {
+    padding: 18px 0;
+    background-color: $black;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__catalog-btn {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+
+        padding: 15.5px 16px;
+
+        text-transform: none;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        &-btn {
+            padding: 14.5px 15px;
+            transition: color $base-transition;
+
+            @media (hover: hover) {
+                &:hover {
+                    color: $orange;
+                }
+            }
+
+            &:active {
+                &:hover {
+                    color: $orange;
+                    background-color: $orange;
+                }
+            }
+        }
+    }
+
+    &__socials {
+        max-width: 137px;
+    }
+
+    &__search {
+        max-width: 310px;
+    }
+}

@@ -9,7 +9,7 @@ export default withNuxt([
             'import/no-cycle': 'off',
             'vue/no-multiple-template-root': 'off',
             'vue/no-v-html': 'off',
-            '@typescript-eslint/no-empty-object-type': 'off',
+            '@typescript-eslint/no-empty-object-type': ['error', { allowInterfaces: 'with-single-extends' }],
             '@typescript-eslint/no-unused-vars': [
                 'error',
                 {
@@ -20,12 +20,6 @@ export default withNuxt([
                     destructuredArrayIgnorePattern: '^_',
                     varsIgnorePattern: '^_',
                     ignoreRestSiblings: true,
-                },
-            ],
-            '@typescript-eslint/no-empty-interface': [
-                'error',
-                {
-                    allowSingleExtends: true,
                 },
             ],
             'vue/html-self-closing': [

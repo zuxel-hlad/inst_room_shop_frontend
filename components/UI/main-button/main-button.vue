@@ -8,10 +8,8 @@
     </button>
 </template>
 <script setup lang="ts">
-import './main-button.scss'
-
 import type { IMainButton } from './main-button.props'
-
+import './main-button.scss'
 defineProps<IMainButton>()
 
 const createRippleEffect = (e: Event): void => {
