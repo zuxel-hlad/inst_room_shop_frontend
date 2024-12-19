@@ -1,20 +1,131 @@
 .main-header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
     color: $white;
+
     background-color: $coal;
+
+    @media screen and (max-width: $md) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 80px;
+    }
+
+    @media screen and (max-width: $extra-sm) {
+        min-height: 60px;
+    }
+
+    &__content {
+        @media screen and (max-width: $md) {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            // display: none;
+
+            width: 50%;
+            height: 100dvh;
+
+            background: $black;
+        }
+
+        @media screen and (max-width: $sm) {
+            overflow-y: auto;
+            width: 100%;
+        }
+    }
 
     &__wrapper {
         display: flex;
         align-items: center;
+
+        @media screen and (max-width: $xl) {
+            gap: 15px;
+            justify-content: space-between;
+        }
+
+        @media screen and (max-width: $md) {
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+        }
     }
 
     &__logo {
         flex-shrink: 0;
         margin-right: auto;
+
+        @media screen and (max-width: $xl) {
+            margin: 0;
+        }
+
+        @media screen and (max-width: $md) {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+        }
+
+        &_mobile {
+            position: static;
+            display: none;
+
+            @media screen and (max-width: $md) {
+                display: inline-block;
+                margin-left: 12px;
+            }
+        }
+    }
+
+    &__burger {
+        display: none;
+        margin-right: 12px;
+        padding: 12px;
+
+        @media screen and (max-width: $md) {
+            display: flex;
+        }
+
+        @media screen and (max-width: $extra-sm) {
+            padding: 8px;
+        }
+
+        &_close {
+            margin-top: 12px;
+            margin-right: 0;
+            margin-left: auto;
+
+            svg path {
+                stroke: $white;
+            }
+        }
     }
 
     &__work-time {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
         margin-left: 10px;
+
+        white-space: nowrap;
+
+        @media screen and (max-width: $xl) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @media screen and (max-width: $md) {
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+            margin-left: 0;
+        }
     }
 
     &__callback {
@@ -26,9 +137,21 @@
 
         white-space: nowrap;
 
+        @media screen and (max-width: $xl) {
+            margin-left: 0;
+        }
+
+        @media screen and (max-width: $md) {
+            margin-bottom: 15px;
+        }
+
         &-text {
             font-size: 18px;
             font-weight: 700;
+
+            @media screen and (max-width: $lg) {
+                font-size: 16px;
+            }
         }
 
         &-link {
@@ -78,6 +201,14 @@
 
         margin-left: 68px;
 
+        @media screen and (max-width: $xl) {
+            margin-left: 0;
+        }
+
+        @media screen and (max-width: $md) {
+            width: 100%;
+        }
+
         &-counter {
             position: absolute;
             top: 24px;
@@ -98,6 +229,26 @@
             border-radius: 50%;
 
             transition: background-color $base-transition;
+
+            @media screen and (max-width: $lg) {
+                top: 15px;
+                right: 6px;
+            }
+
+            @media screen and (max-width: $md) {
+                top: 16px;
+                right: 13px;
+            }
+
+            @media screen and (max-width: $sm) {
+                top: 13px;
+                right: 33px;
+            }
+
+            @media screen and (max-width: $extra-sm) {
+                top: 5px;
+                right: 18px;
+            }
         }
 
         &-btn {
@@ -111,6 +262,16 @@
             background-color: $dark-gray;
 
             transition: background-color $base-transition;
+
+            @media screen and (max-width: $lg) {
+                width: 60px;
+                height: 80px;
+            }
+
+            @media screen and (max-width: $md) {
+                width: 100%;
+                height: 60px;
+            }
 
             @media (hover: hover) {
                 &:hover {
@@ -148,7 +309,20 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+
         margin-left: 16px;
+
+        text-wrap: balance;
+
+        @media screen and (max-width: $xl) {
+            margin-left: 0;
+        }
+
+        @media screen and (max-width: $md) {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
 
         & span:last-child {
             font-weight: 700;

@@ -2,7 +2,7 @@
     "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order"],
     "ignoreFiles": ["**/*.js", "**/*.mjs", "**/*.json"],
     "rules": {
-        "unit-allowed-list": ["%", "deg", "px", "ms", "vh", "dvh", "s"],
+        "unit-allowed-list": ["%", "deg", "px", "ms", "vh", "dvh", "s", "fr"],
         "order/order": [
             [
                 "custom-properties",
