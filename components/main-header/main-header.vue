@@ -1,12 +1,26 @@
 <template>
     <header class="main-header">
         <main-logo class="main-header__logo main-header__logo_mobile" />
-        <main-button class="main-header__burger">
+        <main-button
+            class="main-header__burger"
+            @click="isMobileMenuOpened = true"
+        >
             <burger-icon />
         </main-button>
-        <div class="main-header__content">
+        <div
+            class="main-header__mobile-overlay"
+            :class="{ 'main-header__mobile-overlay_show': isMobileMenuOpened }"
+            @click="isMobileMenuOpened = false"
+        />
+        <div
+            class="main-header__content"
+            :class="{ 'main-header__content_open': isMobileMenuOpened }"
+        >
             <main-container class="main-header__wrapper">
-                <main-button class="main-header__burger main-header__burger_close">
+                <main-button
+                    class="main-header__burger main-header__burger_close"
+                    @click="isMobileMenuOpened = false"
+                >
                     <close-icon />
                 </main-button>
                 <main-logo class="main-header__logo" />
@@ -27,28 +41,36 @@
                         type="button"
                         class="main-header__actions-btn"
                     >
-                        <div class="main-header__actions-counter">10</div>
-                        <favorites-icon />
+                        <span class="main-header__actions-icon">
+                            <span class="main-header__actions-counter">10</span>
+                            <favorites-icon />
+                        </span>
                     </button>
                     <button
                         type="button"
                         class="main-header__actions-btn"
                     >
-                        <div class="main-header__actions-counter">10</div>
-                        <compare-icon />
+                        <span class="main-header__actions-icon">
+                            <span class="main-header__actions-counter">10</span>
+                            <compare-icon />
+                        </span>
                     </button>
                     <button
                         type="button"
                         class="main-header__actions-btn"
                     >
-                        <account-icon />
+                        <span class="main-header__actions-icon">
+                            <account-icon />
+                        </span>
                     </button>
                     <button
                         type="button"
                         class="main-header__actions-btn"
                     >
-                        <div class="main-header__actions-counter">10</div>
-                        <cart-icon />
+                        <span class="main-header__actions-icon">
+                            <span class="main-header__actions-counter">10</span>
+                            <cart-icon />
+                        </span>
                     </button>
                 </div>
 
@@ -76,6 +98,8 @@ import mainNavbar from '~/components/main-navbar/main-navbar.vue'
 import mainButton from '~/components/UI/main-button/main-button.vue'
 
 import './main-header.scss'
+
+const isMobileMenuOpened = ref<boolean>(false)
 
 defineProps<IMainHeaderProps>()
 </script>

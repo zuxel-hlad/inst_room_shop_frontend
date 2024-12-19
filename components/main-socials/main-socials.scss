@@ -32,8 +32,14 @@
         }
 
         &:active {
-            &:hover {
-                color: $orange;
+            background-color: $orange;
+
+            svg path {
+                fill: $white;
+                stroke: $white;
+                transition:
+                    fill $base-transition,
+                    stroke $base-transition;
             }
         }
     }

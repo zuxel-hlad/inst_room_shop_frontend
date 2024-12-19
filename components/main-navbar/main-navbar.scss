@@ -1,17 +1,21 @@
 .main-navbar {
-    height: calc(100% - 307px);
     padding: 18px 0;
     background-color: $black;
+
+    @media screen and (max-width: $md) {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
 
     &__wrapper {
         display: grid;
         grid-auto-rows: 1fr;
         grid-template-columns: minmax(196px, auto) 1fr auto auto;
         grid-template-rows: 1fr;
+        flex-grow: 1;
         gap: 60px;
         align-items: center;
-
-        height: 100%;
 
         @media screen and (max-width: $xl) {
             gap: 15px;

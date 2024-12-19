@@ -22,12 +22,16 @@
     }
 
     &__content {
+        transition: right $base-transition;
+
         @media screen and (max-width: $md) {
             position: absolute;
             top: 0;
-            right: 0;
+            right: -100%;
 
-            // display: none;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
 
             width: 50%;
             height: 100dvh;
@@ -36,8 +40,11 @@
         }
 
         @media screen and (max-width: $sm) {
-            overflow-y: auto;
             width: 100%;
+        }
+
+        &_open {
+            right: 0;
         }
     }
 
@@ -78,6 +85,26 @@
             @media screen and (max-width: $md) {
                 display: inline-block;
                 margin-left: 12px;
+            }
+        }
+    }
+
+    &__mobile-overlay {
+        position: fixed;
+        z-index: -1;
+        inset: 0;
+
+        display: none;
+
+        background-color: rgba($color: $coal, $alpha: 60%);
+        backdrop-filter: blur(3px);
+
+        &_show {
+            display: block;
+            animation: show $base-transition;
+
+            @media screen and (max-width: $sm) {
+                display: none;
             }
         }
     }
@@ -209,10 +236,20 @@
             width: 100%;
         }
 
+        &-icon {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: max-content;
+        }
+
         &-counter {
             position: absolute;
-            top: 24px;
-            right: 22px;
+            top: -8px;
+            right: -8px;
 
             display: flex;
             align-items: center;
@@ -229,32 +266,13 @@
             border-radius: 50%;
 
             transition: background-color $base-transition;
-
-            @media screen and (max-width: $lg) {
-                top: 15px;
-                right: 6px;
-            }
-
-            @media screen and (max-width: $md) {
-                top: 16px;
-                right: 13px;
-            }
-
-            @media screen and (max-width: $sm) {
-                top: 13px;
-                right: 33px;
-            }
-
-            @media screen and (max-width: $extra-sm) {
-                top: 5px;
-                right: 18px;
-            }
         }
 
         &-btn {
-            position: relative;
-
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             width: 96px;
             height: 96px;
