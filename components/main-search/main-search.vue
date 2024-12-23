@@ -4,6 +4,7 @@
             type="text"
             class="main-search__input"
             placeholder="Пошук по катологу"
+            tabindex="0"
         />
     </div>
 </template>

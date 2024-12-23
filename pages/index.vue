@@ -1,5 +1,5 @@
 <template>
-    <main-container>Main page </main-container>
+    <main-container>Main page <product-card /></main-container>
 </template>
 
 <script setup lang="ts">

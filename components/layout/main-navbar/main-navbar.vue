@@ -2,6 +2,7 @@
     <nav class="main-navbar">
         <main-container class="main-navbar__wrapper">
             <main-button
+                title="Каталог товарів"
                 variant="outlined"
                 class="main-navbar__catalog-btn"
             >
@@ -43,7 +44,7 @@
 <script setup lang="ts">
 import type { IMainNavbarProps } from './main-navbar.props'
 
-import burgerIcon from '~/assets/svg/burger.svg'
+import burgerIcon from '~/assets/svg/24x24/burger.svg'
 import mainContainer from '~/components/main-container/main-container.vue'
 import mainSearch from '~/components/main-search/main-search.vue'
 import mainSocials from '~/components/main-socials/main-socials.vue'

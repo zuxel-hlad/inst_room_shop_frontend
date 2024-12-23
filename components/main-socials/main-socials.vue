@@ -1,18 +1,21 @@
 <template>
     <div class="main-socials">
         <a
+            title="Ми у Інстаграм"
             href="#!"
             class="main-socials__link"
         >
             <instagram-icon />
         </a>
         <a
+            title="Ми у Телеграм"
             href="#!"
             class="main-socials__link"
         >
             <telegram-icon />
         </a>
         <a
+            title="Ми у Фейсбук"
             href="#!"
             class="main-socials__link"
         >
@@ -21,7 +24,6 @@
     </div>
 </template>
 <script setup lang="ts">
-
 import type { IMainSocialsProps } from './main-socials.props'
 
 import facebookIcon from '~/assets/svg/socials/facebook.svg'

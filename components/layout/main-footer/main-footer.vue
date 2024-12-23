@@ -88,9 +88,11 @@
             <div class="main-footer__contacts">
                 <main-logo />
                 <a
+                    title="Зателефонувати нам"
                     href="tel:+38089087689"
                     class="main-footer__link main-footer__contacts-link"
                 >
+                    <phoneIcon />
                     +38-098-876-89
                 </a>
                 <main-socials />
@@ -106,12 +108,12 @@
     </footer>
 </template>
 <script setup lang="ts">
-import mainSocials from '../main-socials/main-socials.vue'
-
 import type { IMainFooterProps } from './main-footer.props'
 
+import phoneIcon from '~/assets/svg/24x24/phone.svg'
 import mainContainer from '~/components/main-container/main-container.vue'
 import mainLogo from '~/components/main-logo/main-logo.vue'
+import mainSocials from '~/components/main-socials/main-socials.vue'
 import './main-footer.scss'
 
 defineProps<IMainFooterProps>()

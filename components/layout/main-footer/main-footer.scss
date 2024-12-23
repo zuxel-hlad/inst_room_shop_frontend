@@ -35,22 +35,39 @@
 
         @media screen and (max-width: $extra-sm) {
             gap: 24px;
-            text-align: center;
+            align-items: center;
         }
     }
 
     &__link {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
         color: inherit;
+
         transition: color $base-transition;
+
+        svg path {
+            transition: $base-transition;
+        }
 
         @media (hover: hover) {
             &:hover {
                 color: $orange;
+
+                svg path {
+                    fill: $orange;
+                }
             }
         }
 
         &:active {
             color: $orange;
+
+            svg path {
+                fill: $orange;
+            }
         }
     }
 

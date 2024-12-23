@@ -1,0 +1,232 @@
+.product-card {
+    width: 100%;
+    max-width: 310px;
+    min-height: 340px;
+    padding: 12px;
+
+    background-color: $white;
+    border-radius: $base-radius;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__badge {
+        padding: 4px 6px;
+        color: $white;
+
+        &_new {
+            background-color: #180a3e;
+        }
+
+        &_promotion {
+            background-color: $red;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        height: 24px;
+
+        &-btn {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+
+            width: 24px;
+            height: 24px;
+
+            svg {
+                transition: fill $base-transition;
+
+                path {
+                    transition: stroke $base-transition;
+                }
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    svg {
+                        path {
+                            stroke: $black;
+                        }
+                    }
+                }
+            }
+
+            &_is-favorite {
+                svg {
+                    fill: $red;
+
+                    path {
+                        stroke: $red;
+                    }
+                }
+            }
+
+            &:active {
+                svg {
+                    path {
+                        stroke: $black;
+                    }
+                }
+            }
+
+            &_favorite {
+                @media (hover: hover) {
+                    &:hover {
+                        svg {
+                            fill: $red;
+
+                            path {
+                                stroke: $red;
+                            }
+                        }
+                    }
+                }
+
+                &:active {
+                    svg {
+                        fill: $red;
+
+                        path {
+                            stroke: $red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__main {
+        height: 184px;
+        margin-bottom: 12px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__divider {
+        display: flex;
+        gap: 4px;
+        justify-content: flex-start;
+        margin-bottom: 14px;
+
+        & > div {
+            width: 25%;
+            height: 2px;
+            background-color: $gray;
+
+            &:nth-child(2) {
+                background-color: #ffb78b;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        flex-grow: 1;
+    }
+
+    &__info {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__price {
+        display: flex;
+        gap: 10px;
+        align-items: flex-end;
+        justify-content: flex-start;
+
+        &-value {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 24px;
+
+            @media screen and (max-width: $sm) {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 20px;
+            }
+
+            &_old {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 20px;
+                color: $gray;
+                text-decoration: line-through;
+
+                @media screen and (max-width: $sm) {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 18px;
+                }
+            }
+        }
+    }
+
+    &__available-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-left: auto;
+
+        color: $green;
+
+        &_to-order {
+            color: $orange;
+        }
+    }
+
+    &__cart-btn {
+        transform: translate(12px, 14px);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 60px;
+        height: 56px;
+        padding: 12px;
+
+        border-radius: $base-radius 0 $base-radius;
+
+        svg {
+            path {
+                stroke: $orange;
+            }
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                svg path {
+                    stroke: $white;
+                }
+            }
+        }
+
+        &:active {
+            svg path {
+                stroke: $white;
+            }
+        }
+    }
+}
