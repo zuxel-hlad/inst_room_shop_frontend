@@ -3,6 +3,31 @@
         <slot />
     </div>
 </template>
-<script setup lang="ts">
-import './main-container.scss'
-</script>
+<style lang="scss">
+.main-container {
+    width: 100%;
+    max-width: 1562px;
+    margin: 0 auto;
+    padding: 0 12px;
+
+    @media screen and (max-width: $xl) {
+        max-width: calc($xl - 24px);
+    }
+
+    @media screen and (max-width: $lg) {
+        max-width: calc($lg - 24px);
+    }
+
+    @media screen and (max-width: $md) {
+        max-width: calc($md - 24px);
+    }
+
+    @media screen and (max-width: $sm) {
+        max-width: calc($sm - 24px);
+    }
+
+    @media screen and (max-width: $extra-sm) {
+        max-width: 100%;
+    }
+}
+</style>

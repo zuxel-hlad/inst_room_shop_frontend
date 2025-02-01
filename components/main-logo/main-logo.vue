@@ -7,6 +7,11 @@
     </nuxt-link>
 </template>
 <script setup lang="ts">
-import './main-logo.scss'
 import mainLogo from '~/assets/svg/logo/inst_room_logo.svg'
 </script>
+<style lang="scss">
+.main-logo {
+    display: inline-block;
+    vertical-align: top;
+}
+</style>

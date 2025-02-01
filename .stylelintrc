@@ -1,25 +1,32 @@
 {
-    "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order"],
-    "ignoreFiles": ["**/*.js", "**/*.mjs", "**/*.json"],
+    "extends": ["stylelint-config-standard-scss", "stylelint-config-recommended-vue/scss", "stylelint-config-clean-order"],
+    "overrides": [
+        {
+            "files": ["*.vue", "**/*.vue"],
+            "rules": {
+                "unit-allowed-list": ["%", "deg", "px", "ms", "vh", "dvh", "s", "fr"],
+                "order/order": [
+                    [
+                        "custom-properties",
+                        "declarations",
+                        {
+                            "type": "at-rule",
+                            "name": "media"
+                        },
+                        {
+                            "type": "rule",
+                            "selector": "^&"
+                        }
+                    ]
+                ]
+            }
+        }
+    ],
     "rules": {
-        "unit-allowed-list": ["%", "deg", "px", "ms", "vh", "dvh", "s", "fr"],
-        "order/order": [
-            [
-                "custom-properties",
-                "declarations",
-                {
-                    "type": "at-rule",
-                    "name": "media"
-                },
-                {
-                    "type": "rule",
-                    "selector": "^&"
-                }
-            ]
-        ],
         "no-descending-specificity": null,
         "media-feature-range-notation": null,
         "selector-class-pattern": null,
-        "selector-id-pattern": null
+        "selector-id-pattern": null,
+        "declaration-property-value-no-unknown": null
     }
 }

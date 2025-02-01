@@ -114,7 +114,103 @@ import phoneIcon from '~/assets/svg/24x24/phone.svg'
 import mainContainer from '~/components/main-container/main-container.vue'
 import mainLogo from '~/components/main-logo/main-logo.vue'
 import mainSocials from '~/components/main-socials/main-socials.vue'
-import './main-footer.scss'
 
 defineProps<IMainFooterProps>()
 </script>
+
+<style lang="scss">
+.main-footer {
+    min-height: 333dvh;
+    padding: 45px 0;
+    color: $white;
+    background-color: $coal;
+
+    &__wrapper {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        justify-content: space-around;
+
+        margin-bottom: 24px;
+
+        @media screen and (max-width: $md) {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @media screen and (max-width: $sm) {
+            gap: 50px;
+        }
+
+        @media screen and (max-width: $extra-sm) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @media screen and (max-width: $extra-sm) {
+            gap: 24px;
+            align-items: center;
+        }
+    }
+
+    &__link {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        color: inherit;
+
+        transition: color $base-transition;
+
+        svg path {
+            transition: $base-transition;
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                color: $orange;
+
+                svg path {
+                    fill: $orange;
+                }
+            }
+        }
+
+        &:active {
+            color: $orange;
+
+            svg path {
+                fill: $orange;
+            }
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @media screen and (max-width: $extra-sm) {
+            gap: 30px;
+            text-align: center;
+        }
+
+        &-link {
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+
+    &__copyright {
+        display: block;
+        text-align: center;
+    }
+}
+</style>
